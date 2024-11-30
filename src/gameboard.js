@@ -57,7 +57,6 @@ class Gameboard {
     this.#hits.add(`${row},${column}`);
     ship.hit();
     if (ship.isSunk() === true) {
-      console.log("Ship sunk")
       this.#shipsActive--;
     }
     if (this.#shipsActive === 0) {
