@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "robotoregular";
+  src: url("fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  line-height: 1.5em;
+}
+
+html {
+  font-family: robotoregular, system-ui, sans-serif;
+
+  --menubgcolor: rgb(126, 126, 126);
+  --buttohovercolor: rgb(68, 68, 68);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin-bottom: 32px;
+  color: rgb(0, 91, 175);
+  border-bottom: 2px solid rgb(0, 91, 175);
+}
+
+.content {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1200px;
+  height: 900px;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.boards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.p1Div,
+.p2Div {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 32px 0px 32px;
+  width: 500px;
+  height: 500px;
+  flex: 0 0 auto;
+}
+
+#randomize {
+  background-color: rgb(0, 91, 175);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  height: 30px;
+}
+
+#randomize:hover {
+  background-color: rgb(9, 111, 206);
+}
+
+.turnInfo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 24px;
+  color: rgb(0, 91, 175);
+}
+
+.p1Div h2{
+  font-size: 2em;
+  margin-bottom: 16px;
+  color: rgb(0, 91, 175);
+}
+
+.p2Div h2{
+  font-size: 2em;
+  margin-bottom: 16px;
+  color: rgb(255, 0, 0);
+}
+
+.p1Ships,
+.p2Ships  {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 400px;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+.p1Board,
+.p2Board {
+  flex: 0 0 400px;
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.p1Board {
+  outline: 2px solid rgb(0, 91, 175);
+}
+
+.p2Board{
+  outline: 2px solid rgb(255, 0, 0);
+}
+
+.faded {
+  opacity: 0.5;
+}
+
+.square {
+  border-right: 1px solid rgb(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+  z-index: 0;
+  font-size: 1.5em;
+}
+
+.shipDiv {
+  background-color: rgb(0, 91, 175, 0.75);
+  outline: 2px solid rgba(0, 37, 94);
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shipIcon {
+  background-color: rgb(163, 188, 211);
+  outline: 2px solid rgb(102, 141, 199);
+}
+
+.shipIconSunk {
+  background-color: rgb(255, 108, 108);
+  outline: 2px solid rgb(173, 52, 52);
+}
+
+.hit {
+  background-color: rgb(255, 0, 0);
+  outline: 2px solid rgb(182, 0, 0);
+  z-index: 2;
+}
